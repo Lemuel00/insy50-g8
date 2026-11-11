@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>System Acquisition and Development | Information Systems</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Plus Jakarta Sans', 'sans-serif'],
+                            mono: ['JetBrains Mono', 'monospace'],
+                        },
+                        colors: {
+                            brand: {
+                                50: '#f0f7ff',
+                                100: '#e0effe',
+                                200: '#bae0fd',
+                                300: '#7cc7fb',
+                                400: '#38aaf6',
+                                500: '#0e8ee9',
+                                600: '#0270c7',
+                                700: '#0359a1',
+                                800: '#074b84',
+                                900: '#0c3f6e',
+                                950: '#082848',
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <!-- Lucide Icons CDN -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white">
+
+        <!-- Top Navigation Bar -->
+        <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 glass-panel">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
+                <!-- Zone 1: Brand Wordmark -->
+                <a href="index.html" class="text-base sm:text-lg font-bold tracking-tight text-white whitespace-nowrap shrink-0 flex items-center gap-2.5 group">
+                    <span class="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:bg-blue-600/30 transition-colors">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                    </span>
+                    <span>INSY 50 <span class="text-slate-500 font-normal">/</span> Chapter 8</span>
+                </a>
+
+                <!-- Zone 2: Navigation Links -->
+                <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-400">
+                    <a href="index.html#buy-vs-build" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Buy vs. Build</a>
+                    <a href="buy.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">COTS (Buy)</a>
+                    <a href="build.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Methodologies (Build)</a>
+                </nav>
+
+                <!-- Zone 3: Single Primary Action -->
+                <div class="flex items-center gap-3 shrink-0">
+                    <a href="quiz.html" class="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-colors whitespace-nowrap shrink-0 flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                        Take Quiz
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <!-- PATH A -->
+            <section id="path-a-view" class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-emerald-900/40 space-y-8 shadow-2xl">
+
+                <!-- Top Bar for Path A -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <div class="text-xs font-mono text-emerald-400 uppercase tracking-wider">Path A Implementation</div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white">Buying Off-the-Shelf Software (COTS)</h3>
+                        </div>
+                    </div>
+                    <a href="index.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1.5">
+                        <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                        Back
+                    </a>
+                </div>
+
+                <!-- COTS Customization Spectrum -->
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
+                            <i data-lucide="sliders" class="w-4 h-4 text-emerald-400"></i>
+                            COTS Customization Spectrum
+                        </h4>
+                        <span class="text-xs text-slate-400 font-mono">Modularity vs. Upgradeability</span>
+                    </div>
+
+                    <!-- Spectrum Steps -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Tier 1 -->
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-emerald-500/30 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-emerald-400 font-semibold">Tier 1 · Recommended</span>
+                            </div>
+                            <h5 class="text-base font-bold text-white">Unmodified COTS</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Deployed completely "out-of-the-box" without alteration. Organizations modify their internal procedures to match vendor best practices. Lowest TCO and guaranteed vendor update compatibility.
+                            </p>
+                        </div>
+
+                        <!-- Tier 2 -->
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-blue-500/30 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 font-semibold">Tier 2 · Balanced</span>
+                            </div>
+                            <h5 class="text-base font-bold text-white">Configured COTS</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Tailoring using built-in administrative configuration tools, approval workflow rules, custom user profile roles, and branded dashboards. Codebase remains 100% vanilla and update-safe.
+                            </p>
+                        </div>
+
+                        <!-- Tier 3 -->
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-rose-500/30 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-rose-400 font-semibold">Tier 3 · High Risk</span>
+                            </div>
+                            <h5 class="text-base font-bold text-white">Customized COTS</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Modifying underlying source code, database tables, or writing deep custom DLL hooks. Extremely dangerous: subsequent vendor version releases and security patches will break customizations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real-World COTS Grid -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
+                        <i data-lucide="grid" class="w-4 h-4 text-emerald-400"></i>
+                        Real-World COTS Software Categories & Market Standards
+                    </h4>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- ERP -->
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                            <span class="text-xs font-mono text-emerald-400">Enterprise Operations</span>
+                            <h5 class="text-base font-bold text-white">ERP Systems</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Integrates end-to-end core business processes across finance, supply chain, manufacturing, and HR into a centralized transactional database.
+                            </p>
+                            <div class="pt-2 border-t border-slate-800/80 text-[11px] font-mono text-slate-300">
+                                <strong class="text-slate-400">Examples:</strong> SAP S/4HANA, Microsoft Dynamics 365, Oracle Cloud ERP
+                            </div>
+                        </div>
+
+                        <!-- CRM -->
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                            <span class="text-xs font-mono text-blue-400">Customer Lifecycle</span>
+                            <h5 class="text-base font-bold text-white">CRM Suites</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Manages client prospecting, sales opportunity pipelines, automated marketing campaigns, and omni-channel customer service tickets.
+                            </p>
+                            <div class="pt-2 border-t border-slate-800/80 text-[11px] font-mono text-slate-300">
+                                <strong class="text-slate-400">Examples:</strong> Salesforce Sales Cloud, HubSpot CRM, Zoho CRM
+                            </div>
+                        </div>
+
+                        <!-- Productivity -->
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                            <span class="text-xs font-mono text-purple-400">Workspace & Collab</span>
+                            <h5 class="text-base font-bold text-white">Productivity Suites</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Cloud collaboration, documents, real-time messaging, spreadsheet modeling, and enterprise directory services.
+                            </p>
+                            <div class="pt-2 border-t border-slate-800/80 text-[11px] font-mono text-slate-300">
+                                <strong class="text-slate-400">Examples:</strong> Microsoft 365, Google Workspace, Slack/Notion
+                            </div>
+                        </div>
+
+                        <!-- Financial -->
+                        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                            <span class="text-xs font-mono text-amber-400">Accounting & Audit</span>
+                            <h5 class="text-base font-bold text-white">Financial Systems</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                General ledger bookkeeping, regulatory tax filing, automated accounts payable/receivable reconciliation, and multi-currency reporting.
+                            </p>
+                            <div class="pt-2 border-t border-slate-800/80 text-[11px] font-mono text-slate-300">
+                                <strong class="text-slate-400">Examples:</strong> Oracle NetSuite, QuickBooks Online, Xero
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-800/80 mt-20 py-8 bg-slate-950/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+                <div>
+                    IS_ACQ · Chapter 8: System Acquisition and Development
+                </div>
+                <div class="flex items-center gap-4">
+                    <span>Lemuel Castillo</span>
+                    <span>·</span>
+                    <span>Romeo Francisco</span>
+                    <span>·</span>
+                    <span>Xanjo Opeña</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- External Script -->
+        <script src="script.js"></script>
+    </body>
+</html>

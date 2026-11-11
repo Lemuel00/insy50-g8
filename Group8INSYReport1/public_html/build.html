@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>System Acquisition and Development | Information Systems</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Plus Jakarta Sans', 'sans-serif'],
+                            mono: ['JetBrains Mono', 'monospace'],
+                        },
+                        colors: {
+                            brand: {
+                                50: '#f0f7ff',
+                                100: '#e0effe',
+                                200: '#bae0fd',
+                                300: '#7cc7fb',
+                                400: '#38aaf6',
+                                500: '#0e8ee9',
+                                600: '#0270c7',
+                                700: '#0359a1',
+                                800: '#074b84',
+                                900: '#0c3f6e',
+                                950: '#082848',
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <!-- Lucide Icons CDN -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white">
+
+        <!-- Top Navigation Bar -->
+        <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 glass-panel">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
+                <!-- Zone 1: Brand Wordmark -->
+                <a href="index.html" class="text-base sm:text-lg font-bold tracking-tight text-white whitespace-nowrap shrink-0 flex items-center gap-2.5 group">
+                    <span class="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:bg-blue-600/30 transition-colors">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                    </span>
+                    <span>INSY 50 <span class="text-slate-500 font-normal">/</span> Chapter 8</span>
+                </a>
+
+                <!-- Zone 2: Navigation Links -->
+                <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-400">
+                    <a href="index.html#buy-vs-build" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Buy vs. Build</a>
+                    <a href="buy.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">COTS (Buy)</a>
+                    <a href="build.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Methodologies (Build)</a>
+                </nav>
+
+                <!-- Zone 3: Single Primary Action -->
+                <div class="flex items-center gap-3 shrink-0">
+                    <a href="quiz.html" class="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-colors whitespace-nowrap shrink-0 flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                        Take Quiz
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <!-- PATH B -->
+            <section id="path-b-view" class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-blue-900/40 space-y-8 shadow-2xl">
+
+                <!-- Top Bar for Path B -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-9 h-9 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+                            <i data-lucide="hammer" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <div class="text-xs font-mono text-blue-400 uppercase tracking-wider">Path B Implementation</div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white">Software Development Methodologies</h3>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 self-start sm:self-auto">
+                        <!-- Method Switcher Buttons -->
+                        <div class="flex items-center p-1 rounded-lg bg-slate-950 border border-slate-800">
+                            <button onclick="switchBuildMethod('waterfall')" id="btn-method-waterfall" class="px-3 py-1.5 rounded-md text-xs font-medium bg-blue-600 text-white transition-all flex items-center gap-1.5">
+                                <span>🌊 Waterfall Model</span>
+                            </button>
+                            <button onclick="switchBuildMethod('agile')" id="btn-method-agile" class="px-3 py-1.5 rounded-md text-xs font-medium text-slate-400 hover:text-white transition-all flex items-center gap-1.5">
+                                <span>🔄 Agile Method</span>
+                            </button>
+                        </div>
+
+                        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1.5">
+                            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                            Back
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- WATERFALL SUB-VIEW -->
+                <div id="waterfall-subview" class="space-y-6">
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-bold text-white">The Waterfall Development Model</h4>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+                            A sequential, multistage system development process, where work on the next stage cannot begin until the results of the current stage are reviewed and approved or modified as necessary.
+                        </p>
+                    </div>
+
+                    <!-- 6 Interactive Waterfall Phase Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                        <!-- Phase 1: Investigation -->
+                        <div onclick="openWaterfallModal('investigation')" class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 cursor-pointer group transition-all space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 font-semibold">Phase 01</span>
+                                <span class="text-xs text-slate-500 group-hover:text-blue-400 transition-colors flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                            </div>
+                            <h5 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">1. Investigation</h5>
+                        </div>
+
+                        <!-- Phase 2: Analysis -->
+                        <div onclick="openWaterfallModal('analysis')" class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 cursor-pointer group transition-all space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 font-semibold">Phase 02</span>
+                                <span class="text-xs text-slate-500 group-hover:text-blue-400 transition-colors flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                            </div>
+                            <h5 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">2. Analysis</h5>
+                        </div>
+
+                        <!-- Phase 3: Design -->
+                        <div onclick="openWaterfallModal('design')" class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 cursor-pointer group transition-all space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 font-semibold">Phase 03</span>
+                                <span class="text-xs text-slate-500 group-hover:text-blue-400 transition-colors flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                            </div>
+                            <h5 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">3. Design</h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                        </div>
+
+                        <!-- Phase 4: Construction -->
+                        <div onclick="openWaterfallModal('construction')" class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 cursor-pointer group transition-all space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 font-semibold">Phase 04</span>
+                                <span class="text-xs text-slate-500 group-hover:text-blue-400 transition-colors flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                            </div>
+                            <h5 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">4. Construction</h5>
+                        </div>
+
+                        <!-- Phase 5: Integration & Testing -->
+                        <div onclick="openWaterfallModal('testing')" class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 cursor-pointer group transition-all space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 font-semibold">Phase 05</span>
+                                <span class="text-xs text-slate-500 group-hover:text-blue-400 transition-colors flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                            </div>
+                            <h5 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">5. Integration & Testing</h5>
+                        </div>
+
+                        <!-- Phase 6: Implementation & Maintenance -->
+                        <div onclick="openWaterfallModal('implementation')" class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 cursor-pointer group transition-all space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-blue-400 font-semibold">Phase 06</span>
+                                <span class="text-xs text-slate-500 group-hover:text-blue-400 transition-colors flex items-center gap-1">Details <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                            </div>
+                            <h5 class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">6. Implementation & Maint.</h5>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- AGILE SUB-VIEW -->
+                <div id="agile-subview" class="space-y-6 hidden">
+                    <div class="space-y-2">
+                        <div class="text-xs font-mono text-purple-400 uppercase tracking-wider">Iterative Incremental Framework</div>
+                        <h4 class="text-lg font-bold text-white">The Agile Software Methodology</h4>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+                            Breaks software development into iterative 2- to 8-week sprints. Prioritizes customer collaboration, working software increments, and rapid adaptation over rigid contractual plans.
+                        </p>
+                    </div>
+
+                    <!-- 3-Tab Content Switcher -->
+                    <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+                        <button onclick="switchAgileTab('scrum')" id="tab-agile-scrum" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 text-white transition-all">
+                            Scrum Framework
+                        </button>
+                        <button onclick="switchAgileTab('xp')" id="tab-agile-xp" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">
+                            Extreme Programming (XP)
+                        </button>
+                        <button onclick="switchAgileTab('devops')" id="tab-agile-devops" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">
+                            DevOps Integration
+                        </button>
+                    </div>
+
+                    <!-- TAB 1: SCRUM -->
+                    <div id="agile-tab-scrum" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-3">
+                                <h5 class="text-sm font-bold text-blue-400 uppercase tracking-wide font-mono flex items-center gap-2">
+                                    <i data-lucide="users" class="w-4 h-4"></i>
+                                    Team Roles
+                                </h5>
+                                <div class="space-y-2.5 text-xs">
+                                    <div>
+                                        <strong class="text-white block">Product Owner (PO):</strong>
+                                        <span class="text-slate-400">Solely responsible for managing the Product Backlog, defining user stories, and maximizing the business value delivered by the development team.</span>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white block">Scrum Master (SM):</strong>
+                                        <span class="text-slate-400">Servant-leader and process coach. Facilitates ceremonies, removes internal and external roadblocks, and protects the team from scope creep.</span>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white block">Development Team:</strong>
+                                        <span class="text-slate-400">Cross-functional, self-organizing professionals who turn backlog items into working, tested product increments.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-3">
+                                <h5 class="text-sm font-bold text-emerald-400 uppercase tracking-wide font-mono flex items-center gap-2">
+                                    <i data-lucide="repeat" class="w-4 h-4"></i>
+                                    Artifacts & Sprint Ceremonies
+                                </h5>
+                                <div class="space-y-2.5 text-xs">
+                                    <div>
+                                        <strong class="text-white block">Product Backlog:</strong>
+                                        <span class="text-slate-400">Prioritized single source of truth of all desired features, bug fixes, and non-functional requirements.</span>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white block">Sprint Planning & 2–8 Week Sprints:</strong>
+                                        <span class="text-slate-400">Timeboxed iteration where the team commits to delivering an agreed set of user stories.</span>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white block">Daily Scrum (Standup):</strong>
+                                        <span class="text-slate-400">15-minute daily sync: What did I complete yesterday? What will I work on today? Are there any blockers?</span>
+                                    </div>
+                                    <div>
+                                        <strong class="text-white block">Sprint Review & Retrospective:</strong>
+                                        <span class="text-slate-400">Demoing working software to stakeholders for immediate feedback, followed by team process tuning.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: EXTREME PROGRAMMING (XP) -->
+                    <div id="agile-tab-xp" class="space-y-4 hidden">
+                        <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-4">
+                            <div class="space-y-1">
+                                <h5 class="text-base font-bold text-white flex items-center gap-2">
+                                    <i data-lucide="code-2" class="w-4 h-4 text-purple-400"></i>
+                                    Extreme Programming (XP) Discipline
+                                </h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">
+                                    XP emphasizes short development cycles, extreme software engineering practices, customer collaboration, and constant feedback loops to produce top-tier software quality.
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-blue-400 block font-mono">1. Pair Programming</strong>
+                                    <p class="text-slate-300">Two developers work at a single screen. One writes code ("Driver"), while the other reviews each keystroke and strategizes architecture ("Navigator").</p>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-emerald-400 block font-mono">2. Test-Driven Development (TDD)</strong>
+                                    <p class="text-slate-300">Follows the Red-Green-Refactor loop: Write automated failing unit tests first, write the minimal code to pass tests, then aggressively refactor.</p>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-amber-400 block font-mono">3. Continuous Integration</strong>
+                                    <p class="text-slate-300">Code is merged into the mainline multiple times per day. Automated test pipelines run instantly to catch regressions within minutes.</p>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-purple-400 block font-mono">4. Simple Design</strong>
+                                    <p class="text-slate-300">Design for today's requirements only (YAGNI principle). Do not add speculative complexity; keep the codebase clean and maintainable.</p>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-teal-400 block font-mono">5. On-Site Customer</strong>
+                                    <p class="text-slate-300">A dedicated business user sits directly with the development team full-time to clarify user stories, resolve ambiguities, and test prototypes.</p>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-rose-400 block font-mono">6. Sustainable 40h Pace</strong>
+                                    <p class="text-slate-300">Prohibits chronic overtime. Rested developers write dramatically fewer bugs, think clearly, and sustain steady output over years.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: DEVOPS -->
+                    <div id="agile-tab-devops" class="space-y-4 hidden">
+                        <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-4">
+                            <div class="space-y-1">
+                                <h5 class="text-base font-bold text-white flex items-center gap-2">
+                                    <i data-lucide="infinity" class="w-4 h-4 text-emerald-400"></i>
+                                    DevOps Continuous Delivery & Operations
+                                </h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">
+                                    Breaks down the historic wall between software developers (Dev) and IT infrastructure operations (Ops). Automates the software delivery pipeline from commit to production monitoring.
+                                </p>
+                            </div>
+
+                            <!-- Visual Infinity Loop Layout -->
+                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
+                                <div class="text-xs font-mono text-center text-slate-400 uppercase tracking-wider">The DevOps Continuous Lifecycle</div>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
+                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">1. Plan</div>
+                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">2. Code</div>
+                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">3. Build</div>
+                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">4. Test</div>
+                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">5. Release</div>
+                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">6. Deploy</div>
+                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">7. Operate</div>
+                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">8. Monitor</div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                                    <strong class="text-white block font-semibold">Continuous Integration & Delivery (CI/CD):</strong>
+                                    <span class="text-slate-400">Automated build and test pipelines test every pull request. Approved merges trigger automated deployments to staging or production.</span>
+                                </div>
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                                    <strong class="text-white block font-semibold">Infrastructure as Code (IaC):</strong>
+                                    <span class="text-slate-400">Cloud servers, networks, and databases are provisioned using declarative configuration scripts (e.g., Terraform, Ansible) under version control.</span>
+                                </div>
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                                    <strong class="text-white block font-semibold">Automated Regression Testing:</strong>
+                                    <span class="text-slate-400">Suites of end-to-end integration and smoke tests run automatically before any artifact is pushed to customer-facing servers.</span>
+                                </div>
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
+                                    <strong class="text-white block font-semibold">Continuous Observability & Monitoring:</strong>
+                                    <span class="text-slate-400">Real-time metrics, distributed traces, and log aggregation trigger automated rollbacks if latency or error rates spike.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+        <!-- MODAL -->
+        <div id="waterfall-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden transition-opacity duration-300" onclick="handleModalBackdropClick(event)">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 sm:p-8 space-y-6 relative" onclick="event.stopPropagation()">
+                <!-- Close Button -->
+                <button onclick="closeWaterfallModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg bg-slate-800/60 hover:bg-slate-800 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+
+                <div class="space-y-1">
+                    <span id="modal-phase-number" class="text-xs font-mono text-blue-400 font-semibold uppercase tracking-wider">Phase Details</span>
+                    <h3 id="modal-phase-title" class="text-xl sm:text-2xl font-bold text-white">Investigation</h3>
+                </div>
+
+                <div id="modal-phase-body" class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-800/80 mt-20 py-8 bg-slate-950/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+                <div>
+                    IS_ACQ · Chapter 8: System Acquisition and Development
+                </div>
+                <div class="flex items-center gap-4">
+                    <span>Lemuel Castillo</span>
+                    <span>·</span>
+                    <span>Romeo Francisco</span>
+                    <span>·</span>
+                    <span>Xanjo Opeña</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- External Script -->
+        <script src="script.js"></script>
+    </body>
+</html>

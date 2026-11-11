@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>System Acquisition and Development | Information Systems</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Plus Jakarta Sans', 'sans-serif'],
+                            mono: ['JetBrains Mono', 'monospace'],
+                        },
+                        colors: {
+                            brand: {
+                                50: '#f0f7ff',
+                                100: '#e0effe',
+                                200: '#bae0fd',
+                                300: '#7cc7fb',
+                                400: '#38aaf6',
+                                500: '#0e8ee9',
+                                600: '#0270c7',
+                                700: '#0359a1',
+                                800: '#074b84',
+                                900: '#0c3f6e',
+                                950: '#082848',
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <!-- Lucide Icons CDN -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white">
+
+        <!-- Top Navigation Bar -->
+        <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 glass-panel">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
+                <!-- Zone 1: Brand Wordmark -->
+                <a href="index.html" class="text-base sm:text-lg font-bold tracking-tight text-white whitespace-nowrap shrink-0 flex items-center gap-2.5 group">
+                    <span class="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:bg-blue-600/30 transition-colors">
+                        <i data-lucide="layers" class="w-4 h-4"></i>
+                    </span>
+                    <span>INSY 50 <span class="text-slate-500 font-normal">/</span> Chapter 8</span>
+                </a>
+
+                <!-- Zone 2: Navigation Links -->
+                <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-400">
+                    <a href="index.html#buy-vs-build" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Buy vs. Build</a>
+                    <a href="buy.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">COTS (Buy)</a>
+                    <a href="build.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Methodologies (Build)</a>
+                </nav>
+
+                <!-- Zone 3: Single Primary Action -->
+                <div class="flex items-center gap-3 shrink-0">
+                    <a href="quiz.html" class="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-sm transition-colors whitespace-nowrap shrink-0 flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                        Take Quiz
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <!-- QUIZ -->
+            <section id="quiz-section" class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-8 shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+                    <div>
+                        <div class="text-xs font-mono text-blue-400 uppercase tracking-widest mb-1">Knowledge Assessment</div>
+                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                            System Acquisition & Development Quiz
+                        </h2>
+                        <p class="text-sm text-slate-400 mt-1">
+                            Test your mastery of chapter concepts. Results and detailed pedagogical rationales are saved locally to your browser scoreboard.
+                        </p>
+                    </div>
+                    <div id="quiz-status-pill" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 self-start sm:self-auto flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-4 h-4 text-blue-400"></i>
+                        <span>5 Questions</span>
+                    </div>
+                </div>
+
+                <!-- Quiz Form -->
+                <form id="quiz-form" onsubmit="handleQuizSubmit(event)" class="space-y-6">
+
+                    <!-- Question 1 -->
+                    <div class="quiz-question-card p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3" id="q-card-1">
+                        <div class="flex items-center justify-between text-xs font-mono">
+                            <span class="text-blue-400 font-semibold">Question 1 of 5</span>
+                            <span class="text-slate-500">Organizational Change Levels</span>
+                        </div>
+                        <h4 class="text-sm sm:text-base font-bold text-white leading-snug">
+                            Which level of organizational change involves fundamentally rethinking the nature of the business and redefining its business model?
+                        </h4>
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q1" value="A" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">A) Automation</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q1" value="B" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">B) Rationalization of Procedures</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q1" value="C" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">C) Business Process Redesign</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q1" value="D" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">D) Paradigm Shift</span>
+                            </label>
+                        </div>
+                        <div id="q1-explanation" class="hidden text-xs p-3 rounded-lg bg-slate-900 border border-slate-800 leading-relaxed"></div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question-card p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3" id="q-card-2">
+                        <div class="flex items-center justify-between text-xs font-mono">
+                            <span class="text-blue-400 font-semibold">Question 2 of 5</span>
+                            <span class="text-slate-500">TELOS Feasibility Framework</span>
+                        </div>
+                        <h4 class="text-sm sm:text-base font-bold text-white leading-snug">
+                            In the TELOS feasibility framework, which dimension evaluates whether the expected financial return and cost savings justify the capital investment?
+                        </h4>
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="A" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">A) Technical Feasibility</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="B" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">B) Economic Feasibility</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="C" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">C) Operational Feasibility</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="D" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">D) Legal Feasibility</span>
+                            </label>
+                        </div>
+                        <div id="q2-explanation" class="hidden text-xs p-3 rounded-lg bg-slate-900 border border-slate-800 leading-relaxed"></div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question-card p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3" id="q-card-3">
+                        <div class="flex items-center justify-between text-xs font-mono">
+                            <span class="text-blue-400 font-semibold">Question 3 of 5</span>
+                            <span class="text-slate-500">System Cutover Strategies</span>
+                        </div>
+                        <h4 class="text-sm sm:text-base font-bold text-white leading-snug">
+                            Which system cut-over strategy carries the lowest risk of business disruption by operating both the legacy system and the new system simultaneously until stability is proven?
+                        </h4>
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="A" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">A) Direct Cutover (Plunge)</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="B" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">B) Phase-in Strategy</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="C" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">C) Pilot Approach</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="D" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">D) Parallel Start-up</span>
+                            </label>
+                        </div>
+                        <div id="q3-explanation" class="hidden text-xs p-3 rounded-lg bg-slate-900 border border-slate-800 leading-relaxed"></div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="quiz-question-card p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3" id="q-card-4">
+                        <div class="flex items-center justify-between text-xs font-mono">
+                            <span class="text-blue-400 font-semibold">Question 4 of 5</span>
+                            <span class="text-slate-500">Agile Scrum Roles</span>
+                        </div>
+                        <h4 class="text-sm sm:text-base font-bold text-white leading-snug">
+                            In the Scrum methodology, which role is solely accountable for prioritizing the Product Backlog and maximizing the business value of the product?
+                        </h4>
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="A" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">A) Scrum Master</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="B" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">B) Product Owner</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="C" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">C) Lead Systems Architect</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="D" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">D) Project Manager</span>
+                            </label>
+                        </div>
+                        <div id="q4-explanation" class="hidden text-xs p-3 rounded-lg bg-slate-900 border border-slate-800 leading-relaxed"></div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="quiz-question-card p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3" id="q-card-5">
+                        <div class="flex items-center justify-between text-xs font-mono">
+                            <span class="text-blue-400 font-semibold">Question 5 of 5</span>
+                            <span class="text-slate-500">Quality Assurance & Testing</span>
+                        </div>
+                        <h4 class="text-sm sm:text-base font-bold text-white leading-snug">
+                            Which testing phase specifically validates that the system can handle anticipated heavy data workloads, high transaction rates, and peak concurrent users without degrading?
+                        </h4>
+                        <div class="space-y-2 text-xs sm:text-sm">
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q5" value="A" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">A) Unit Testing</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q5" value="B" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">B) Integration Testing</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q5" value="C" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">C) Volume / Stress Testing</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer transition-colors">
+                                <input type="radio" name="q5" value="D" class="text-blue-600 focus:ring-blue-500" />
+                                <span class="text-slate-300">D) User Acceptance Testing (UAT)</span>
+                            </label>
+                        </div>
+                        <div id="q5-explanation" class="hidden text-xs p-3 rounded-lg bg-slate-900 border border-slate-800 leading-relaxed"></div>
+                    </div>
+
+                    <!-- Submit & Feedback Actions -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                        <button type="submit" id="btn-submit-quiz" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold text-sm text-white shadow-lg shadow-blue-950/40 transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Submit Quiz</span>
+                        </button>
+                        <button type="button" onclick="resetQuiz()" id="btn-reset-quiz" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 font-medium text-sm text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                            <span>Retake Quiz</span>
+                        </button>
+                        <div id="quiz-result-summary" class="hidden text-sm font-semibold text-white px-4 py-2 rounded-lg bg-slate-800 border border-slate-700"></div>
+                    </div>
+                </form>
+
+                <!-- Local Scoreboard Logger & Past History Table -->
+                <div class="pt-6 border-t border-slate-800 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="history" class="w-4 h-4 text-blue-400"></i>
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider font-mono">
+                                Past Attempts History (Local Storage)
+                            </h4>
+                        </div>
+                        <button onclick="clearScoreHistory()" class="text-xs text-rose-400 hover:text-rose-300 font-mono transition-colors flex items-center gap-1.5">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            Clear Score History
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/70">
+                        <table class="w-full text-left text-xs font-mono">
+                            <thead class="bg-slate-900/80 border-b border-slate-800 text-slate-400 uppercase">
+                                <tr>
+                                    <th class="py-3 px-4">Attempt</th>
+                                    <th class="py-3 px-4">Timestamp</th>
+                                    <th class="py-3 px-4">Score</th>
+                                    <th class="py-3 px-4">Percentage</th>
+                                    <th class="py-3 px-4">Outcome</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scoreboard-body" class="divide-y divide-slate-800/80 text-slate-300">
+                                <!-- Dynamically populated from localStorage -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-800/80 mt-20 py-8 bg-slate-950/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+                <div>
+                    IS_ACQ · Chapter 8: System Acquisition and Development
+                </div>
+                <div class="flex items-center gap-4">
+                    <span>Lemuel Castillo</span>
+                    <span>·</span>
+                    <span>Romeo Francisco</span>
+                    <span>·</span>
+                    <span>Xanjo Opeña</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- External Script -->
+        <script src="script.js"></script>
+    </body>
+</html>
