@@ -63,8 +63,8 @@
                 <!-- Zone 2: Navigation Links -->
                 <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-400">
                     <a href="index.html#buy-vs-build" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Buy vs. Build</a>
-                    <a href="buy.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">COTS (Buy)</a>
-                    <a href="build.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Methodologies (Build)</a>
+                    <a href="buy.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Buy (COTS)</a>
+                    <a href="build.html" class="hover:text-white transition-colors whitespace-nowrap shrink-0">Build (Methodologies)</a>
                 </nav>
 
                 <!-- Zone 3: Single Primary Action -->
@@ -286,16 +286,16 @@
                             <thead>
                                 <tr class="border-b border-slate-800 bg-slate-900/90 text-xs font-mono uppercase tracking-wider text-slate-400">
                                     <th class="py-4 px-4 sm:px-6 w-1/4">Strategic Factor</th>
-                                    <th class="py-4 px-4 sm:px-6 w-[37.5%] text-blue-400">
-                                        <div class="flex items-center gap-2">
-                                            <i data-lucide="hammer" class="w-4 h-4"></i>
-                                            <span>BUILD (Custom Development)</span>
-                                        </div>
-                                    </th>
                                     <th class="py-4 px-4 sm:px-6 w-[37.5%] text-emerald-400">
                                         <div class="flex items-center gap-2">
-                                            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                                            <i data-lucide="hammer" class="w-4 h-4"></i>
                                             <span>BUY (Off-the-Shelf / COTS)</span>
+                                        </div>
+                                    </th>
+                                    <th class="py-4 px-4 sm:px-6 w-[37.5%] text-blue-400">
+                                        <div class="flex items-center gap-2">
+                                            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                                            <span>BUILD (Custom Development)</span>
                                         </div>
                                     </th>
                                 </tr>
@@ -311,30 +311,14 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Custom-tailored program written from scratch
-                                    </td>
-                                    <td class="py-4 px-4 sm:px-6 text-slate-300">
                                         Purchasing or renting existing commercial software
                                     </td>
-                                </tr>
-
-                                <!-- Row 2: Cost & Budget -->
-                                <tr class="hover:bg-slate-800/30 transition-colors">
-                                    <td class="py-4 px-4 sm:px-6 font-semibold text-white">
-                                        <div class="flex items-center gap-2">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                                            2. Cost & Budget
-                                        </div>
-                                    </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Difficult to estimate accurately / high upfront costs
-                                    </td>
-                                    <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Lower initial cost / ongoing vendor support & maintenance fees
+                                        Custom-tailored program written from scratch
                                     </td>
                                 </tr>
 
-                                <!-- Row 3: Business Needs Fit -->
+                                <!-- Row 2: Business Needs Fit -->
                                 <tr class="hover:bg-slate-800/30 transition-colors">
                                     <td class="py-4 px-4 sm:px-6 font-semibold text-white">
                                         <div class="flex items-center gap-2">
@@ -343,12 +327,30 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        High exact match to custom requirements
-                                    </td>
-                                    <td class="py-4 px-4 sm:px-6 text-slate-300">
                                         Moderate / unmodified packages may require business compromises
                                     </td>
+                                    <td class="py-4 px-4 sm:px-6 text-slate-300">
+                                        High exact match to custom requirements
+                                    </td>
                                 </tr>
+
+                                <!-- Row 3: Cost & Budget -->
+                                <tr class="hover:bg-slate-800/30 transition-colors">
+                                    <td class="py-4 px-4 sm:px-6 font-semibold text-white">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                                            2. Cost & Budget
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-4 sm:px-6 text-slate-300">
+                                        Lower initial cost / ongoing vendor support & maintenance fees
+                                    </td>
+                                    <td class="py-4 px-4 sm:px-6 text-slate-300">
+                                        Difficult to estimate accurately / high upfront costs
+                                    </td>
+                                </tr>
+
+
 
                                 <!-- Row 4: Process Impact -->
                                 <tr class="hover:bg-slate-800/30 transition-colors">
@@ -359,10 +361,10 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        May automate poor existing processes
+                                        Forces adoption of streamlined standard processes
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Forces adoption of streamlined standard processes
+                                        May automate poor existing processes
                                     </td>
                                 </tr>
 
@@ -375,10 +377,10 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Takes months or years to build
+                                        Immediate acquisition and rapid deployment
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Immediate acquisition and rapid deployment
+                                        Takes months or years to build
                                     </td>
                                 </tr>
 
@@ -391,10 +393,10 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Depends on in-house dev team skill
+                                        Predictable / can be test-driven before buying
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Predictable / can be test-driven before buying
+                                        Depends on in-house dev team skill
                                     </td>
                                 </tr>
 
@@ -407,10 +409,10 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Requires dedicated in-house technical resources
+                                        Relies on vendor support contracts.
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Relies on vendor support contracts.
+                                        Requires dedicated in-house technical resources
                                     </td>
                                 </tr>
 
@@ -423,10 +425,10 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Proprietary code creates a unique competitive edge
+                                        Shared software accessible to competitors
                                     </td>
                                     <td class="py-4 px-4 sm:px-6 text-slate-300">
-                                        Shared software accessible to competitors
+                                        Proprietary code creates a unique competitive edge
                                     </td>
                                 </tr>
 
