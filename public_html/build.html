@@ -219,69 +219,49 @@
                     <div class="space-y-2">
                         <h4 class="text-lg font-bold text-white">The Agile Software Methodology</h4>
                         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
-                            Breaks software development into iterative 2- to 8-week sprints. Prioritizes customer collaboration, working software increments, and rapid adaptation over rigid contractual plans.
+                            An iterative system development process that develops the system in “sprint” increments lasting from two weeks to two months. It concentrates on maximizing the team’s ability to deliver quickly and respond to emerging requirements.
                         </p>
                     </div>
 
                     <!-- 3-Tab Content Switcher -->
                     <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
                         <button onclick="switchAgileTab('scrum')" id="tab-agile-scrum" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 text-white transition-all">
-                            Scrum Framework
+                            Scrum
                         </button>
                         <button onclick="switchAgileTab('xp')" id="tab-agile-xp" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">
                             Extreme Programming (XP)
                         </button>
                         <button onclick="switchAgileTab('devops')" id="tab-agile-devops" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white transition-all">
-                            DevOps Integration
+                            DevOps
                         </button>
                     </div>
 
                     <!-- TAB 1: SCRUM -->
                     <div id="agile-tab-scrum" class="space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-3">
-                                <h5 class="text-sm font-bold text-blue-400 uppercase tracking-wide font-mono flex items-center gap-2">
-                                    <i data-lucide="users" class="w-4 h-4"></i>
-                                    Team Roles
-                                </h5>
-                                <div class="space-y-2.5 text-xs">
-                                    <div>
-                                        <strong class="text-white block">Product Owner (PO):</strong>
-                                        <span class="text-slate-400">Solely responsible for managing the Product Backlog, defining user stories, and maximizing the business value delivered by the development team.</span>
-                                    </div>
-                                    <div>
-                                        <strong class="text-white block">Scrum Master (SM):</strong>
-                                        <span class="text-slate-400">Servant-leader and process coach. Facilitates ceremonies, removes internal and external roadblocks, and protects the team from scope creep.</span>
-                                    </div>
-                                    <div>
-                                        <strong class="text-white block">Development Team:</strong>
-                                        <span class="text-slate-400">Cross-functional, self-organizing professionals who turn backlog items into working, tested product increments.</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-3">
 
-                            <div class="p-5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-3">
-                                <h5 class="text-sm font-bold text-emerald-400 uppercase tracking-wide font-mono flex items-center gap-2">
-                                    <i data-lucide="repeat" class="w-4 h-4"></i>
-                                    Artifacts & Sprint Ceremonies
-                                </h5>
-                                <div class="space-y-2.5 text-xs">
-                                    <div>
-                                        <strong class="text-white block">Product Backlog:</strong>
-                                        <span class="text-slate-400">Prioritized single source of truth of all desired features, bug fixes, and non-functional requirements.</span>
-                                    </div>
-                                    <div>
-                                        <strong class="text-white block">Sprint Planning & 2–8 Week Sprints:</strong>
-                                        <span class="text-slate-400">Timeboxed iteration where the team commits to delivering an agreed set of user stories.</span>
-                                    </div>
-                                    <div>
-                                        <strong class="text-white block">Daily Scrum (Standup):</strong>
-                                        <span class="text-slate-400">15-minute daily sync: What did I complete yesterday? What will I work on today? Are there any blockers?</span>
-                                    </div>
-                                    <div>
-                                        <strong class="text-white block">Sprint Review & Retrospective:</strong>
-                                        <span class="text-slate-400">Demoing working software to stakeholders for immediate feedback, followed by team process tuning.</span>
-                                    </div>
+                            <h5 class="text-base font-bold text-white flex items-center gap-2">
+                                <i data-lucide="users" class="w-4 h-4 text-blue-400"></i>
+                                Scrum Framework
+                            </h5>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                A method to keep the agile system development effort focused and moving quickly.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-blue-400 block font-mono">Product Owner (PO)</strong>
+                                    <p class="text-slate-300">Represents the project stakeholders and is responsible for communicating and aligning project priorities between the stakeholders and development team.</p>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-emerald-400 block font-mono">Scrum Master (SM)</strong>
+                                    <p class="text-slate-300">Responsible for coordinating all activities.</p>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800/80 space-y-1">
+                                    <strong class="text-amber-400 block font-mono">Development Team</strong>
+                                    <p class="text-slate-300">A self-organizing group of professionals who build and test the working product.</p>
                                 </div>
                             </div>
                         </div>
@@ -296,8 +276,7 @@
                                     Extreme Programming (XP) Discipline
                                 </h5>
                                 <p class="text-xs text-slate-400 leading-relaxed">
-                                    XP emphasizes short development cycles, extreme software engineering practices, customer collaboration, and constant feedback loops to produce top-tier software quality.
-                                </p>
+                                    XP promote  s incremental development of a system using short development cycles to improve productivity and accommodate new customer requirements.</p>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
@@ -343,42 +322,77 @@
                                     DevOps Continuous Delivery & Operations
                                 </h5>
                                 <p class="text-xs text-slate-400 leading-relaxed">
-                                    Breaks down the historic wall between software developers (Dev) and IT infrastructure operations (Ops). Automates the software delivery pipeline from commit to production monitoring.
+                                    The practice of blending the tasks performed by the development staff (Dev) and the IT operations (Ops) groups to enable faster and more reliable software releases. It is being used as part of a continuous development strategy, in which releases are launched daily.
                                 </p>
                             </div>
 
                             <!-- Visual Infinity Loop Layout -->
-                            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
-                                <div class="text-xs font-mono text-center text-slate-400 uppercase tracking-wider">The DevOps Continuous Lifecycle</div>
-                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
-                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">1. Plan</div>
-                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">2. Code</div>
-                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">3. Build</div>
-                                    <div class="p-2.5 rounded bg-blue-600/10 border border-blue-500/20 text-blue-300">4. Test</div>
-                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">5. Release</div>
-                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">6. Deploy</div>
-                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">7. Operate</div>
-                                    <div class="p-2.5 rounded bg-emerald-600/10 border border-emerald-500/20 text-emerald-300">8. Monitor</div>
+                            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col items-center space-y-6 overflow-hidden">
+                                <div class="text-xs font-mono text-center text-slate-400 uppercase tracking-wider">
+                                    The DevOps Continuous Lifecycle
                                 </div>
-                            </div>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
-                                    <strong class="text-white block font-semibold">Continuous Integration & Delivery (CI/CD):</strong>
-                                    <span class="text-slate-400">Automated build and test pipelines test every pull request. Approved merges trigger automated deployments to staging or production.</span>
-                                </div>
-                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
-                                    <strong class="text-white block font-semibold">Infrastructure as Code (IaC):</strong>
-                                    <span class="text-slate-400">Cloud servers, networks, and databases are provisioned using declarative configuration scripts (e.g., Terraform, Ansible) under version control.</span>
-                                </div>
-                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
-                                    <strong class="text-white block font-semibold">Automated Regression Testing:</strong>
-                                    <span class="text-slate-400">Suites of end-to-end integration and smoke tests run automatically before any artifact is pushed to customer-facing servers.</span>
-                                </div>
-                                <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 space-y-1">
-                                    <strong class="text-white block font-semibold">Continuous Observability & Monitoring:</strong>
-                                    <span class="text-slate-400">Real-time metrics, distributed traces, and log aggregation trigger automated rollbacks if latency or error rates spike.</span>
-                                </div>
+                                <!-- Flawless Horizontal Figure-8 DevOps Infinity SVG -->
+                                <svg viewBox="0 0 800 400" class="w-full max-w-[700px] h-auto select-none" role="img" aria-label="DevOps Continuous Development Lifecycle">
+                                <defs>
+                                <!-- Drop shadow for the center crossover -->
+                                <filter id="crossShadow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#020617" flood-opacity="0.65" />
+                                </filter>
+
+                                <!-- Chevron Arrowhead for Teal (Dev) -->
+                                <marker id="arrowTeal" viewBox="0 0 24 24" refX="14" refY="12" markerWidth="1.25" markerHeight="1.25" orient="auto">
+                                    <path d="M 0 2 L 16 12 L 0 22 L 6 12 Z" fill="#3BB9C5" stroke="#0f172a" stroke-width="1.5" stroke-linejoin="round" />
+                                </marker>
+
+                                <!-- Chevron Arrowhead for Orange (Ops) -->
+                                <marker id="arrowOrange" viewBox="0 0 24 24" refX="14" refY="12" markerWidth="1.25" markerHeight="1.25" orient="auto">
+                                    <path d="M 0 2 L 16 12 L 0 22 L 6 12 Z" fill="#EE9E23" stroke="#0f172a" stroke-width="1.5" stroke-linejoin="round" />
+                                </marker>
+                                </defs>
+
+                                <!-- ==================== TEAL LOOP (DEV - COUNTER-CLOCKWISE) ==================== -->
+                                <g fill="none" stroke="#3BB9C5" stroke-width="32" stroke-linecap="butt">
+                                <!-- 1. Plan (Center to Top-Left) -->
+                                <path d="M 400 200 C 350 150, 300 90, 250 90" marker-end="url(#arrowTeal)" />
+                                <!-- 2. Define (Top-Left to Far-Left) -->
+                                <path d="M 250 90 A 110 110 0 0 0 140 200" marker-end="url(#arrowTeal)" />
+                                <!-- 3. Build (Far-Left to Bottom-Left) -->
+                                <path d="M 140 200 A 110 110 0 0 0 250 310" marker-end="url(#arrowTeal)" />
+                                <!-- 4. Test (Bottom-Left to Center) - NO ARROW for smooth crossing -->
+                                <path d="M 250 310 C 300 310, 350 250, 400 200" />
+                                </g>
+
+                                <!-- ==================== ORANGE LOOP (OPS - CLOCKWISE) ==================== -->
+                                <g fill="none" stroke="#EE9E23" stroke-width="32" stroke-linecap="butt" filter="url(#crossShadow)">
+                                <!-- 5. Monitor (Center to Top-Right) -->
+                                <path d="M 400 200 C 450 150, 500 90, 550 90" marker-end="url(#arrowOrange)" />
+                                <!-- 6. Release (Top-Right to Far-Right) -->
+                                <path d="M 550 90 A 110 110 0 0 1 660 200" marker-end="url(#arrowOrange)" />
+                                <!-- 7. Deploy (Far-Right to Bottom-Right) -->
+                                <path d="M 660 200 A 110 110 0 0 1 550 310" marker-end="url(#arrowOrange)" />
+                                <!-- 8. Operate (Bottom-Right to Center) - NO ARROW for smooth crossing -->
+                                <path d="M 550 310 C 500 310, 450 250, 400 200" />
+                                </g>
+
+                                <!-- ==================== READABLE TEXT LABELS ==================== -->
+
+                                <!-- Top Intersection -->
+                                <text x="400" y="100" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Plan</text>
+
+                                <!-- Dev Loop (Left) -->
+                                <text x="250" y="45" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Define acceptance criteria</text>
+                                <text x="60" y="205" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Build</text>
+                                <text x="250" y="375" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Automated testing</text>
+
+                                <!-- Bottom Intersection -->
+                                <text x="400" y="325" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Continuous monitoring</text>
+
+                                <!-- Ops Loop (Right) -->
+                                <text x="550" y="45" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Release</text>
+                                <text x="740" y="205" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Deploy</text>
+                                <text x="550" y="375" text-anchor="middle" fill="#f8fafc" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15">Operate</text>
+                                </svg>
                             </div>
                         </div>
                     </div>
